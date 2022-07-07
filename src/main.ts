@@ -8,11 +8,12 @@ async function bootstrap() {
     .setTitle('Test NestJS Pulpo API')
     .setDescription('APIs Documentation Business Core Test NestJS Pulpo')
     .setVersion('1.0')
-    .addTag('test_nest_pulpo')
+    // .addTag('test_nest_pulpo')
     .addBearerAuth()
     .build();
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('doc', app, document);
-  await app.listen(3000);
+  app.enableCors(); // Problem flutter web. Consulted (07-2021) in: https://docs.nestjs.com/security/cors
+  await app.listen(3001);
 }
 bootstrap();

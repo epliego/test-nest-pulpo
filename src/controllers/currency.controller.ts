@@ -7,6 +7,8 @@ import {
   ApiResponse,
 } from '@nestjs/swagger';
 import { RequestCurrencyConversionDto } from '../dto/request/request-currency-conversion-dto';
+import { ResponseListCurrencyDto } from '../dto/response/response-list-currency-dto';
+import { ResponseCurrencyConversionDto } from '../dto/response/response-currency-conversion-dto';
 
 @ApiBearerAuth()
 @Controller('v1/currency')
@@ -21,6 +23,7 @@ export class CurrencyController {
   @ApiOperation({ summary: 'API Currency Conversion' })
   @ApiOkResponse({
     description: 'Consulted Currency Conversion successfully',
+    type: ResponseCurrencyConversionDto,
   })
   @ApiResponse({
     status: 503,
@@ -41,6 +44,7 @@ export class CurrencyController {
   @ApiOperation({ summary: 'API List of Currencies' })
   @ApiOkResponse({
     description: 'Consulted List of Currencies successfully',
+    type: ResponseListCurrencyDto,
   })
   @ApiResponse({
     status: 503,
