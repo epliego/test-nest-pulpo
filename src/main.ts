@@ -6,7 +6,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const options = new DocumentBuilder()
     .setTitle('Test NestJS Pulpo API')
-    .setDescription('APIs Documentation Business Core Test NestJS Pulpo')
+    .setDescription('APIs Documentation Test NestJS Pulpo')
     .setVersion('1.0')
     // .addTag('test_nest_pulpo')
     .addBearerAuth()
